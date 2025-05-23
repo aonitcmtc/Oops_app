@@ -1,0 +1,158 @@
+<style>
+
+    p {
+        font-size: 18px;
+    }
+
+    /* xxx-nat >> is No Active */
+    .d-msg-block-nat {
+        background-color: #fbfbfb;
+        height: 82px;
+        margin-top: 1px;
+    }
+
+    .d-msg-block-nav {
+        background-color: #fbfbfb;
+        height: 82px;
+        margin-top: 1px;
+    }
+
+    .d-msg-block-nav:active {
+        background-color: #EEEEEE;
+        height: 82px;
+        margin-top: 1px;
+    }
+
+    .cover-img {
+        display: block;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 6px;
+        height: 72px;
+        width: 72px;
+
+        border: 1px solid #000;
+        border-radius: 50%;
+    }
+
+    .img-profiles {
+        height: 60px;
+        margin-top: 5px;
+
+        border-radius: 50%;
+    }
+</style>
+<div class="container screen-msg-content">
+    <div class="row d-msg-block-nat">
+        <div class="col-12">
+            <div class="text-center text-danger">
+                <button class="btn btn-sm btn-outline-primary rounded-pill mt-4">Add friend</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-msg-block-nat">
+        <div class="col-3 text-center">
+            <div class="cover-img">
+                <!-- At online set link image from bucket -->
+                <!-- <img class="img-profiles" src="./asset/img/avatar_user_icon.png" alt=""> -->
+                <img class="img-profiles" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1025px-Cat03.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-3 text-center">
+            <div class="cover-img">
+                <!-- At online set link image from bucket -->
+                <img class="img-profiles" src="./asset/img/avatar_user_icon.png" alt="">
+                <!-- <img class="img-profiles" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1025px-Cat03.jpg" alt=""> -->
+            </div>
+        </div>
+        <div class="col-3 text-center">
+            <div class="cover-img">
+                <!-- At online set link image from bucket -->
+                <!-- <img class="img-profiles" src="./asset/img/avatar_user_icon.png" alt=""> -->
+                <img class="img-profiles" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1025px-Cat03.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-3 text-center">
+            <div class="cover-img">
+                <!-- At online set link image from bucket -->
+                <img class="img-profiles" src="./asset/img/avatar_user_icon.png" alt="">
+                <!-- <img class="img-profiles" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1025px-Cat03.jpg" alt=""> -->
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="row d-msg-block-nav" data-user-id="001">
+        <div class="col-4 text-center">
+            <div class="cover-img">
+                <!-- At online set link image from bucket -->
+                <!-- <img class="img-profiles" src="./asset/img/avatar_user_icon.png" alt=""> -->
+                <img class="img-profiles" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1025px-Cat03.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="text-danger p-2">
+                <h2>title</h2>
+                <p>last message</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-msg-block-nav" data-user-id="002">
+        <div class="col-4 text-center">
+            <div class="cover-img">
+                <!-- At online set link image from bucket -->
+                <img class="img-profiles" src="./asset/img/avatar_user_icon.png" alt="">
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="text-danger p-2">
+                <h2>title</h2>
+                <p>last message</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // screen-msg-content
+    $(document).ready(function(){
+
+
+        // getContent
+        $(".d-msg-block-nav").click(function() {
+            var user_id = $(this).data('user-id');
+            // alert("user_id : "+user_id);
+            getMsgDetail(user_id);
+        });
+
+        function getMsgDetail(user_id) {
+            // Clear Content
+            $("#main-content").html("");
+            
+            $.ajax({
+                url: "https://api.example.com/data",
+                method: "GET",
+                dataType: "json",
+                success: function(response) {
+                    console.log(response);
+                    $("#main-content").append(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    $("#main-content").append(error);
+                }
+            });
+
+            // $.get('./app/'+menu_name+'.html', function(data) {
+            //     // console.log(data);
+            //     $("#main-content").append(data);
+            // }, 'text');
+        }
+
+    });
+</script>
