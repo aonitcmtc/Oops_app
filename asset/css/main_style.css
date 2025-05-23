@@ -20,6 +20,7 @@ body {
 }
 
 #main-content {
+    position: absolute;
     margin-top: 10vh;
     height: 80vh;
     width: 100%;
