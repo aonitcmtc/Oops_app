@@ -1,3 +1,20 @@
+@font-face{
+    font-family: 'Krub-Medium';
+    src: url('../font/Krub/Krub-Medium.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: 'Krub-Bold';
+    src: url('../font/Krub/Krub-Bold.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: 'Krub-Regular';
+    src: url('../font/Krub/') format('truetype');
+    font-weight: normal;
+}
 
 body {
     position: relative;
@@ -5,9 +22,17 @@ body {
     height: 100vh;
     background-color: #23374D;
 
+    font-family: 'Krub-Regular';
+    font-weight: normal;
+
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Krub-Bold';
+    font-weight: normal;
 }
 
 #main-header {
@@ -21,7 +46,7 @@ body {
 
 #main-content {
     position: absolute;
-    margin-top: 10vh;
+    top: 10vh;
     height: 80vh;
     width: 100%;
 
@@ -37,6 +62,16 @@ body {
     width: 100%;
 
     background-color: #EEEEEE;
+}
+
+.reset-row {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.row-nav-footer {
+    height: 10vh;
+    padding: 1vh;
 }
 
 /* #23374D  dark

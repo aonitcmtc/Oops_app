@@ -9,7 +9,7 @@ $(document).ready(function(){
 
  
     // section Header
-    const dheader = `<div class="row">
+    const dheader = `<div class="row reset-row">
                         <div id="d-head-left" class="col-2 d-header-tab text-center">
                             <!-- <i class="fa fa-angle-left fa-3x" aria-hidden="true"></i> -->
                         </div>
@@ -23,17 +23,17 @@ $(document).ready(function(){
     $('#main-header').append(dheader);
     
     // section Footer
-    const dfooter = `<div class="row">
+    const dfooter = `<div class="row row-nav-footer">
                         <div id="d-footer-home" class="col-4 d-footer-nav text-center">
-                            <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-home fa-2x" aria-hidden="true"></i>
                             <div id="alert-noti-home"></div>
                         </div>
                         <div id="d-footer-msg" class="col-4 d-footer-nav text-center">
-                            <i class="fa fa-comments-o fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-comments-o fa-2x" aria-hidden="true"></i>
                             <div id="alert-noti-msg">&ensp;${msg_noti_count}&ensp;</div>
                         </div>
                         <div id="d-footer-profile" class="col-4 d-footer-nav text-center">
-                            <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                             <div id="alert-noti-profile"></div>
                         </div>
                     </div>`;
